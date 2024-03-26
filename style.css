@@ -1,0 +1,351 @@
+@font-face {
+    font-family: 'Trebuchet MS';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Trebuchet MS'), url('font/trebuc.woff'), format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Trebuchet MS Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Trebuchet MS Italic'), url('font/Trebuchet-MS-Italic.woff'), format('woff');
+    }
+
+
+:root{
+    --white : #fff;
+    --black : #000;
+    --cardBorder : #ffffff30;
+    --cardBackground : #ffffff1a;
+    --btnBg : #ffffff00;
+    --btnFocus : #ffffffb9;
+
+    --facebook : #1771e6;
+    --twitter : #1c99e6;
+    --instagram : #cb2770;
+    --whatsapp : #2fe664;
+    --telegram : #0081c2;
+    --github : rgb(88, 101, 242);
+    --linkedin : #007AB5;
+}
+@font-face {
+    font-family: 'Trebuchet MS';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Trebuchet MS'), url('font/trebuc.woff'), format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Trebuchet MS Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Trebuchet MS Italic'), url('font/Trebuchet-MS-Italic.woff'), format('woff');
+    }
+
+
+:root{
+    --white : #fff;
+    --black : #000;
+    --cardBorder : #ffffff30;
+    --cardBackground : #ffffff1a;
+    --btnBg : #ffffff00;
+    --btnFocus : #ffffffb9;
+
+    --facebook : #1771e6;
+    --twitter : #1c99e6;
+    --instagram : #cb2770;
+    --whatsapp : #2fe664;
+    --telegram : #0081c2;
+    --github : rgb(88, 101, 242);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Circle animation */
+.circle1{
+    width: 21rem;
+    height: 21rem;
+    border-radius: 100%;
+    position: fixed;
+    top: 5%;
+    left: 30%;
+    background: linear-gradient(-25deg, #5648d8, #8641f4);;
+    box-shadow: 0 0 50px #5648d8;
+    animation: topCircle 8s ease infinite;
+}
+@keyframes topCircle{
+    50%{
+        left: 33%;
+        top: 2.5%;
+        scale: 1.1;
+    }
+}
+.circle2{
+    width: 21rem;
+    height: 21rem;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 5%;
+    right: 30%;
+    background: linear-gradient(-25deg, #d84869, #f46641);
+    box-shadow: 0 0 50px #d84869;
+    animation: bottomCircle 8s ease infinite;
+}
+@keyframes bottomCircle{
+    50%{
+        bottom: 3.5%;
+        right: 33%;
+        scale: 1.1;
+    }
+}
+
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-wrapper{
+    height: 49rem;
+    padding: 2rem 5rem;
+    color: var(--white);
+    background-color: var(--cardBackground);
+    backdrop-filter: blur(1.5rem);
+    border: 0.2rem solid var(--cardBorder);
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+.card-wrapper div img{
+    width: 17rem;
+    height: 17rem;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+.card-wrapper .user-name{
+    font-size: 3.2rem;
+}
+.card-wrapper .user-designation{
+    font-size: 1.9rem;
+    color: #ffffff85;
+}
+.card-wrapper .buttons-group{
+    display: flex;
+    gap: 1rem;
+}
+
+.card-wrapper .buttons-group button{
+    width: 15rem;
+    color: var(--btnFocus);
+    background: var(--btnBg);
+    border: 0.2rem solid var(--btnFocus);
+    border-radius: 0.4rem;
+    padding: 0.9rem 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+.card-wrapper .buttons-group .btn-share{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.9rem;
+}
+.card-wrapper .buttons-group button:hover{
+    background: var(--btnFocus);
+    color: #131313;
+}
+
+
+/* modal body */
+.modal{
+    width: 55rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    color: white;
+    background: #00000088;
+    padding: 2rem 2.5rem;
+    border: 0.2rem solid #ffffff59;
+    border-radius: 2rem;
+    backdrop-filter: blur(1rem);
+    scale: 0;
+    transition: all 0.5s ease-in-out;
+    z-index: 30;
+}
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.2rem;
+    border-bottom: 0.1rem solid #ffffff88;
+    margin-bottom: 2.5rem;
+}
+.modal-header h1{
+    font-size: 3.2rem;
+}
+.close{
+    font-size: 3rem;
+}
+
+.modal-body h3{
+    font-size: 1.9rem;
+}
+
+.icon-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+    margin-top: 2rem;
+    /* flex-wrap: wrap; */
+}
+.icon-container .icon{
+    width: 6.5rem;
+    height: 6.5rem;
+    border: 0.1rem solid #ffffff88;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    margin: 1rem 0 2.5rem;
+}
+.icon-container .icon i{
+    font-size: 2.7rem;
+}
+#facebook{
+    color: var(--facebook);
+    border: 1px solid var(--facebook);
+}
+#facebook:hover{
+    color: white;
+    background: var(--facebook);
+}
+#twitter{
+    color: var(--twitter);
+    border: 1px solid var(--twitter);
+}
+#twitter:hover{
+    color: white;
+    background: var(--twitter);
+}
+#instagram{
+    color: var(--instagram);
+    border: 1px solid var(--instagram);
+}
+#instagram:hover{
+    color: white;
+    background: var(--instagram);
+}
+#whatsapp{
+    color: var(--whatsapp);
+    border: 1px solid var(--whatsapp);
+}
+#whatsapp:hover{
+    color: white;
+    background: var(--whatsapp);
+}
+#telegram{
+    color: var(--telegram);
+    border: 1px solid var(--telegram);
+}
+#telegram:hover{
+    color: white;
+    background: var(--telegram);
+}
+
+
+/* profile follow modal */
+.profileModal{
+    width: 55rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    color: white;
+    background: #00000088;
+    padding: 2rem 2.5rem;
+    border: 0.2rem solid #ffffff59;
+    border-radius: 2rem;
+    backdrop-filter: blur(1rem);
+    scale: 0;
+    transition: all 0.5s ease-in-out;
+    z-index: 30;
+}
+
+.profileModal-body .icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+#github{
+    color: var(--github);
+    border: 1px solid var(--github);
+}
+#github:hover{
+    color: white;
+    background: var(--github);
+}
+#linkedin{
+    color: var(--linkedin);
+    border: 1px solid var(--linkedin);
+}
+#linkedin:hover{
+    color: white;
+    background: var(--linkedin);
+}
+
+
+/* overlay */
+.overlay{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #5f5f5f83;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 20;
+}
+.overLayactive{
+    opacity: 1;
+    pointer-events: initial;
+}
+.active{
+    scale: 1;
+}
